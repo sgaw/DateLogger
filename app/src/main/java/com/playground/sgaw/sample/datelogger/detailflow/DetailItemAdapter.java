@@ -12,7 +12,7 @@ import com.playground.sgaw.sample.datelogger.R;
  */
 
 public class DetailItemAdapter extends RecyclerView.Adapter<DetailItemViewHolder> {
-    DetailDataProvider mDataProvider = DetailDataProvider.getInstance();
+    final DetailDataProvider mDataProvider = DetailDataProvider.getInstance();
 
     @Override
     public DetailItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

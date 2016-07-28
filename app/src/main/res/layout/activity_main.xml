@@ -17,7 +17,7 @@
         android:id="@+id/seekBar"/>
 
     <Button
-        android:text="Date"
+        tools:text="Date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="145dp"
@@ -25,7 +25,7 @@
         android:id="@+id/recordButton"/>
 
     <Button
-        android:text="Calendar"
+        android:text="@string/main_button_launch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="145dp"

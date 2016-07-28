@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
+import android.widget.Toast;
 
 import com.playground.sgaw.sample.datelogger.detailflow.DetailActivity;
 import com.playground.sgaw.sample.datelogger.inputflow.IDateView;
@@ -39,6 +40,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 mPresenter.record();
+                Toast.makeText(view.getContext(),
+                        R.string.toast_click_record,
+                        Toast.LENGTH_SHORT)
+                        .show();
             }
         });
 

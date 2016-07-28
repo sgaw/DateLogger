@@ -1,5 +1,7 @@
 package com.playground.sgaw.sample.datelogger.inputflow;
 
+import android.widget.Toast;
+
 /**
  * Presenter for user input screen.
  */

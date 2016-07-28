@@ -4,6 +4,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
+import com.playground.sgaw.sample.datelogger.R;
+
 /**
  * View holder to for a {@link DetailItem}.
  */
@@ -13,6 +15,7 @@ public class DetailItemViewHolder extends RecyclerView.ViewHolder {
 
     public DetailItemViewHolder(View view) {
         super(view);
+        mTextView = (TextView) view.findViewById(R.id.textView);
     }
 
     void bindItem(DetailItem item) {
