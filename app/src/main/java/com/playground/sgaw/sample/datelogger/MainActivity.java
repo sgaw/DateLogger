@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button launchButton = (Button) findViewById(R.id.recordButton);
+        Button launchButton = (Button) findViewById(R.id.detailButton);
         final MainActivity activity = this;
         launchButton.setOnClickListener(new View.OnClickListener() {
             final WeakReference<MainActivity> mActivityRef = new WeakReference<>(activity);

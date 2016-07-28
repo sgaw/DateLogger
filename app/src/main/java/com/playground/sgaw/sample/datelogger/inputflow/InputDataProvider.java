@@ -18,7 +18,7 @@ public class InputDataProvider {
 
     public InputDataProvider(Calendar instance) {
         mCalendar = instance;
-        mCalendar.set(2016, 01, 01);
+        mCalendar.set(2016, 00, 01);
     }
 
     Date getDate() {
@@ -31,7 +31,11 @@ public class InputDataProvider {
 
     void setRelativeDayOfMonth(int percent) {
         int maxDayOfMonth = 31; // TODO: use Calendar.getMaximum(DAY_OF_MONTH)
-        setDayOfMonth(percent * maxDayOfMonth / 100);
+        int dayOfMonth = (int) Math.round(percent * maxDayOfMonth / 100.0);
+        if (dayOfMonth < 1) {
+            dayOfMonth = 1;
+        }
+        setDayOfMonth(dayOfMonth);
     }
 
     private void setDayOfMonth(int dayOfMonth) {

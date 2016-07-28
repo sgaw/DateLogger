@@ -6,10 +6,11 @@ package com.playground.sgaw.sample.datelogger.inputflow;
 
 public class InputPresenter {
     private final IDateView mIDateView;
-    private InputDataProvider mInputDataProvider;
+    private InputDataProvider mInputDataProvider = new InputDataProvider();
 
     public InputPresenter(IDateView dateView) {
         mIDateView = dateView;
+        mIDateView.setValue(mInputDataProvider.getDate());
     }
 
     public void record() {
