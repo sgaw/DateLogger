@@ -13,6 +13,7 @@ import com.playground.sgaw.sample.datelogger.inputflow.IDateView;
 import com.playground.sgaw.sample.datelogger.inputflow.InputPresenter;
 
 import java.lang.ref.WeakReference;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
@@ -75,15 +76,17 @@ public class MainActivity extends AppCompatActivity {
 
     private static class DateView implements IDateView {
         private final Button mButton;
+        private final SimpleDateFormat mFormat;
 
         private DateView(Button button) {
             mButton = button;
+            mFormat = new SimpleDateFormat("MMM d");
         }
 
         @Override
         public void setValue(Date value) {
             // TODO: format string
-            mButton.setText(value.toString());
+            mButton.setText(mFormat.format(value));
         }
     }
 }
