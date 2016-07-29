@@ -78,4 +78,8 @@ public class CircularButton extends View implements IDateView {
     public void setCircularPaint(Paint paint) {
         mCircularPaint = paint;
     }
+
+    public Paint getCircularPaint() {
+        return mCircularPaint;
+    }
 }
