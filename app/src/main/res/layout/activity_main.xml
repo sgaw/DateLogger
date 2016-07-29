@@ -24,6 +24,11 @@
         tools:layout_editor_absoluteY="183dp"
         android:id="@+id/recordButton"/>
 
+    <com.playground.sgaw.sample.datelogger.CircularButton
+        android:id="@+id/circularButton"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"/>
+
     <Button
         android:text="@string/main_button_launch"
         android:layout_width="wrap_content"
