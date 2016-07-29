@@ -1,5 +1,7 @@
 package com.playground.sgaw.sample.datelogger.inputflow;
 
+import android.util.Log;
+
 import com.playground.sgaw.sample.datelogger.detailflow.DetailDataProvider;
 
 import java.util.Calendar;
@@ -30,6 +32,7 @@ public class InputDataProvider {
     }
 
     void setRelativeDayOfMonth(int percent) {
+        Log.e("InputDataProvider", "percent = " + percent);
         int maxDayOfMonth = 31; // TODO: use Calendar.getMaximum(DAY_OF_MONTH)
         int dayOfMonth = (int) Math.round(percent * maxDayOfMonth / 100.0);
         if (dayOfMonth < 1) {

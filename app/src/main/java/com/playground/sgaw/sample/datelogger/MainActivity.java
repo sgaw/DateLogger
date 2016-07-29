@@ -49,23 +49,11 @@ public class MainActivity extends AppCompatActivity {
         circularButton.setOnClickListener(clickListener);
 
 
-        SeekBar seekBar = (SeekBar) findViewById(R.id.seekBar);
-        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        CircularSeekBar seekBar = (CircularSeekBar) findViewById(R.id.seekBar);
+        seekBar.setProgressChangedListener(new CircularSeekBar.OnProgressChangedListener() {
             @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean userInput) {
-                if (userInput) {
-                    mPresenter.progressDayOfMonth(i);
-                }
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
+            public void onProgressChanged(CircularSeekBar seekBar, int progress) {
+                mPresenter.progressDayOfMonth(progress);
             }
         });
     }

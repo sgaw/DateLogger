@@ -9,13 +9,11 @@
     android:orientation="vertical"
     tools:context="com.playground.sgaw.sample.datelogger.MainActivity">
 
-    <SeekBar
+    <com.playground.sgaw.sample.datelogger.CircularSeekBar
+        android:id="@+id/seekBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="279dp"
-        android:layout_marginBottom="10dp"
-        android:id="@+id/seekBar"/>
+        android:layout_weight="1"
+        android:layout_height="0dp"/>
 
     <com.playground.sgaw.sample.datelogger.CircularButton
         android:id="@+id/circularButton"
@@ -29,9 +27,5 @@
         tools:layout_editor_absoluteX="145dp"
         tools:layout_editor_absoluteY="443dp"
         android:id="@+id/detailButton"/>
-    <com.playground.sgaw.sample.datelogger.CircularSeekBar
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="0dp"/>
 
 </LinearLayout>
