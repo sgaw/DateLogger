@@ -48,17 +48,15 @@ public class CircularButton extends View implements IDateView {
         int canvasWidth = canvas.getWidth();
         int canvasHeight = canvas.getHeight();
 
-        int smallestWidth = (canvasWidth < canvasHeight) ? canvasWidth : canvasHeight;
-
         float centerX = canvasWidth * 0.5f;
         float centerY = canvasHeight * 0.5f;
 
-        float radius = smallestWidth * 0.5f;
-        canvas.drawCircle(centerX, centerY, radius, mCircularPaint);
-
         float textOffsetX = mTextPaint.measureText(mText) * 0.5f;
         float textOffsetY = mTextPaint.getFontMetrics().ascent * 0.4f;
+        // Draw circle that just encloses the text.
+        canvas.drawCircle(centerX, centerY, textOffsetX, mCircularPaint);
         canvas.drawText(mText, centerX - textOffsetX, centerY - textOffsetY, mTextPaint);
+
 
     }
 
@@ -77,9 +75,5 @@ public class CircularButton extends View implements IDateView {
 
     public void setCircularPaint(Paint paint) {
         mCircularPaint = paint;
-    }
-
-    public Paint getCircularPaint() {
-        return mCircularPaint;
     }
 }
