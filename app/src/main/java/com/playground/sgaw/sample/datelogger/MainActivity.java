@@ -9,7 +9,6 @@ import android.widget.SeekBar;
 import android.widget.Toast;
 
 import com.playground.sgaw.sample.datelogger.detailflow.DetailActivity;
-import com.playground.sgaw.sample.datelogger.inputflow.IDateView;
 import com.playground.sgaw.sample.datelogger.inputflow.InputPresenter;
 
 import java.lang.ref.WeakReference;

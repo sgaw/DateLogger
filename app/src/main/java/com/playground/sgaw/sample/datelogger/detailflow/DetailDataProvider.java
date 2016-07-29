@@ -2,6 +2,8 @@ package com.playground.sgaw.sample.datelogger.detailflow;
 
 import android.support.v4.util.CircularArray;
 
+import com.playground.sgaw.sample.datelogger.detailflow.detailitem.DetailItem;
+
 import java.util.Calendar;
 import java.util.Date;
 
@@ -17,7 +19,6 @@ public class DetailDataProvider {
 
     private DetailDataProvider() {
         this(new CircularArray<DetailItem>());
-        Calendar instance = Calendar.getInstance();
     }
 
     private DetailDataProvider(CircularArray<DetailItem> detailItemList) {

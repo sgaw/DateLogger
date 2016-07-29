@@ -1,4 +1,4 @@
-package com.playground.sgaw.sample.datelogger.detailflow;
+package com.playground.sgaw.sample.datelogger.detailflow.detailitem;
 
 import java.util.Date;
 

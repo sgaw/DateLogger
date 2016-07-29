@@ -6,6 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.playground.sgaw.sample.datelogger.R;
+import com.playground.sgaw.sample.datelogger.detailflow.DetailDataProvider;
+import com.playground.sgaw.sample.datelogger.detailflow.detailitem.DetailItem;
+import com.playground.sgaw.sample.datelogger.detailflow.detailitem.DetailItemViewHolder;
 
 /**
  * RecyclerView.Adapter to bind {@link DetailItem} to views.
