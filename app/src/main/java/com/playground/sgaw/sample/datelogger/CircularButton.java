@@ -65,7 +65,7 @@ public class CircularButton extends View implements IDateView {
     private void init(Context context) {
         mFormat = new SimpleDateFormat("MMM d");
 
-        mCircularPaint = new Paint();
+        setCircularPaint(new Paint());
         mTextPaint = new TextPaint(Paint.ANTI_ALIAS_FLAG);
 
         // TODO: Use attributes
@@ -73,5 +73,9 @@ public class CircularButton extends View implements IDateView {
         mTextPaint.setColor(ContextCompat.getColor(context, android.R.color.white));
         // TODO: Use dimension/attribute
         mTextPaint.setTextSize(32f * getResources().getDisplayMetrics().scaledDensity);
+    }
+
+    public void setCircularPaint(Paint paint) {
+        mCircularPaint = paint;
     }
 }
