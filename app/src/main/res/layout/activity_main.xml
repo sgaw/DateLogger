@@ -14,15 +14,8 @@
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="279dp"
+        android:layout_marginBottom="10dp"
         android:id="@+id/seekBar"/>
-
-    <Button
-        tools:text="Date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="145dp"
-        tools:layout_editor_absoluteY="183dp"
-        android:id="@+id/recordButton"/>
 
     <com.playground.sgaw.sample.datelogger.CircularButton
         android:id="@+id/circularButton"

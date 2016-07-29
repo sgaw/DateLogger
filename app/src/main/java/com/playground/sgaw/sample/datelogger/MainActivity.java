@@ -34,10 +34,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button recordButton = (Button) findViewById(R.id.recordButton);
         CircularButton circularButton = (CircularButton) findViewById(R.id.circularButton);
-        mPresenter = new InputPresenter(new DateView(recordButton, circularButton));
-        recordButton.setOnClickListener(new View.OnClickListener() {
+        mPresenter = new InputPresenter(circularButton);
+        View.OnClickListener clickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mPresenter.record();
@@ -46,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
                         Toast.LENGTH_SHORT)
                         .show();
             }
-        });
-
+        };
+        circularButton.setOnClickListener(clickListener);
 
 
         SeekBar seekBar = (SeekBar) findViewById(R.id.seekBar);
@@ -74,23 +73,5 @@ public class MainActivity extends AppCompatActivity {
     private void launchDetailView() {
         startActivity(new Intent(this, DetailActivity.class));
         finish();
-    }
-
-    private static class DateView implements IDateView {
-        private final Button mButton;
-        private final SimpleDateFormat mFormat;
-        private final CircularButton mCiruclarButton;
-
-        private DateView(Button button, CircularButton circularButton) {
-            mButton = button;
-            mCiruclarButton = circularButton;
-            mFormat = new SimpleDateFormat("MMM d");
-        }
-
-        @Override
-        public void setValue(Date value) {
-            mButton.setText(mFormat.format(value));
-            mCiruclarButton.setValue(value);
-        }
     }
 }
