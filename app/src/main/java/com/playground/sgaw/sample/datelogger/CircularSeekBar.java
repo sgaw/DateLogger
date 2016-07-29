@@ -4,6 +4,8 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -81,6 +83,26 @@ public class CircularSeekBar extends View {
         return true;
     }
 
+    @Override
+    public Parcelable onSaveInstanceState() {
+        Parcelable superState = super.onSaveInstanceState();
+        SavedState savedState = new SavedState(superState);
+        savedState.mTheta = mTheta;
+        return savedState;
+    }
+
+    @Override
+    public void onRestoreInstanceState(Parcelable state) {
+        if (!(state instanceof SavedState)) {
+            super.onRestoreInstanceState(state);
+            return;
+        }
+
+        SavedState savedState = (SavedState) state;
+        super.onRestoreInstanceState(savedState.getSuperState());
+        mTheta = savedState.mTheta;
+    }
+
     /**
      * Set change listener
      */
@@ -114,5 +136,37 @@ public class CircularSeekBar extends View {
         if (mProgressChangedListener != null) {
             mProgressChangedListener.onProgressChanged(this, getProgress());
         }
+    }
+
+    public static class SavedState extends BaseSavedState {
+        public double mTheta;
+
+        SavedState(Parcelable superState) {
+            super(superState);
+        }
+
+        private SavedState(Parcel in) {
+            super(in);
+            this.mTheta = in.readDouble();
+        }
+
+        @Override
+        public void writeToParcel(Parcel out, int flags) {
+            super.writeToParcel(out, flags);
+            out.writeDouble(mTheta);
+        }
+
+        public static final Parcelable.Creator<SavedState> CREATOR =
+                new Parcelable.Creator<SavedState>() {
+                    @Override
+                    public SavedState createFromParcel(Parcel parcel) {
+                        return new SavedState(parcel);
+                    }
+
+                    @Override
+                    public SavedState[] newArray(int i) {
+                        return new SavedState[i];
+                    }
+                };
     }
 }

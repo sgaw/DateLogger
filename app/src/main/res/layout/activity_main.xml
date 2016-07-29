@@ -2,7 +2,6 @@
 <LinearLayout
     android:id="@+id/activity_main"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -21,8 +20,8 @@
 
         <com.playground.sgaw.sample.datelogger.CircularButton
             android:id="@+id/circularButton"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="@dimen/center_button_width"
+            android:layout_height="@dimen/center_button_width"
             android:layout_gravity="center"/>
     </FrameLayout>
 
@@ -30,6 +29,7 @@
         android:id="@+id/detailButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:text="@string/main_button_launch"/>
 
 </LinearLayout>
