@@ -11,6 +11,8 @@ import android.text.TextPaint;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.playground.sgaw.sample.datelogger.inputflow.IDateView;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -59,10 +61,10 @@ public class CircularButton extends View implements IDateView {
 
         float centerX = canvasWidth * 0.5f;
         float centerY = canvasHeight * 0.5f;
+        canvas.drawCircle(centerX, centerY, radius, mCircularPaint);
 
         float textOffsetX = mTextPaint.measureText(mText) * 0.5f;
         float textOffsetY = mTextPaint.getFontMetrics().ascent * 0.4f;
-        canvas.drawCircle(centerX, centerY, radius, mCircularPaint);
         canvas.drawText(mText, centerX - textOffsetX, centerY - textOffsetY, mTextPaint);
     }
 
@@ -85,7 +87,7 @@ public class CircularButton extends View implements IDateView {
         super.onRestoreInstanceState(savedState.getSuperState());
         mText = savedState.mText;
     }
-    
+
     private void init(Context context) {
         mFormat = new SimpleDateFormat("MMM d");
         mCircularPaint = new Paint();

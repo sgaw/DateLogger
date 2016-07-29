@@ -2,9 +2,6 @@ package com.playground.sgaw.sample.datelogger.inputflow;
 
 import android.app.Activity;
 
-import com.playground.sgaw.sample.datelogger.IDateView;
-import com.playground.sgaw.sample.datelogger.MainActivity;
-
 /**
  * Presenter for user input screen.
  */

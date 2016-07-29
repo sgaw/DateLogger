@@ -74,7 +74,7 @@ public class CircularSeekBar extends View {
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_MOVE:
-                updateTheta(event.getX(), event.getY());
+                setPolarCoordinate(event.getX(), event.getY());
                 invalidate();
                 break;
             default:
@@ -121,7 +121,7 @@ public class CircularSeekBar extends View {
         return temp;
     }
 
-    private void updateTheta(float x, float y) {
+    private void setPolarCoordinate(float x, float y) {
         int canvasWidth = getWidth();
         int canvasHeight = getHeight();
 

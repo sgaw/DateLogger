@@ -1,19 +1,14 @@
 package com.playground.sgaw.sample.datelogger;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.SeekBar;
 import android.widget.Toast;
 
 import com.playground.sgaw.sample.datelogger.detailflow.DetailActivity;
 import com.playground.sgaw.sample.datelogger.inputflow.InputPresenter;
-
-import java.lang.ref.WeakReference;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
     private InputPresenter mPresenter;
@@ -24,13 +19,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button launchButton = (Button) findViewById(R.id.detailButton);
-        final MainActivity activity = this;
         launchButton.setOnClickListener(new View.OnClickListener() {
-            final WeakReference<MainActivity> mActivityRef = new WeakReference<>(activity);
-
             @Override
             public void onClick(View view) {
-                mActivityRef.get().launchDetailView();
+                launchDetailView();
             }
         });
 
