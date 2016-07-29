@@ -1,5 +1,7 @@
 package com.playground.sgaw.sample.datelogger.inputflow;
 
+import android.app.Activity;
+
 import com.playground.sgaw.sample.datelogger.detailflow.DetailDataProvider;
 
 import java.util.Calendar;
@@ -12,14 +14,16 @@ public class InputDataProvider {
     private Calendar mCalendar;
     private DetailDataProvider mDetailDataProvider = DetailDataProvider.getInstance();
 
-    public InputDataProvider() {
-        this(Calendar.getInstance());
+    public InputDataProvider(Activity activity) {
+        this(activity, Calendar.getInstance());
     }
 
-    public InputDataProvider(Calendar instance) {
+    private InputDataProvider(Activity activity, Calendar instance) {
+        mDetailDataProvider.load(activity);
         mCalendar = instance;
         mCalendar.set(2016, 00, 01);
     }
+
 
     Date getDate() {
         return mCalendar.getTime();
@@ -40,5 +44,9 @@ public class InputDataProvider {
 
     private void setDayOfMonth(int dayOfMonth) {
         mCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+    }
+
+    public void save(Activity activity) {
+        mDetailDataProvider.save(activity);
     }
 }

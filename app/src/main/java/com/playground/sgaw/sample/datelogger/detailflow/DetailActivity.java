@@ -1,8 +1,8 @@
 package com.playground.sgaw.sample.datelogger.detailflow;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 
 import com.playground.sgaw.sample.datelogger.MainActivity;
@@ -13,13 +13,17 @@ import com.playground.sgaw.sample.datelogger.R;
  */
 public class DetailActivity extends AppCompatActivity {
 
+    private DetailItemAdapter mAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        recyclerView.setAdapter(new DetailItemAdapter());
+
+        mAdapter = new DetailItemAdapter();
+        recyclerView.setAdapter(mAdapter);
     }
 
     @Override
@@ -27,5 +31,12 @@ public class DetailActivity extends AppCompatActivity {
         super.onBackPressed();
         startActivity(new Intent(this, MainActivity.class));
         finish();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        mAdapter.save(this);
     }
 }

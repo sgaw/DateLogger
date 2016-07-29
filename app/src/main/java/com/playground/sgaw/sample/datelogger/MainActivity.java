@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         CircularButton circularButton = (CircularButton) findViewById(R.id.circularButton);
-        mPresenter = new InputPresenter(circularButton);
+        mPresenter = new InputPresenter(this, circularButton);
         View.OnClickListener clickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,6 +56,12 @@ public class MainActivity extends AppCompatActivity {
                 mPresenter.progressDayOfMonth(progress);
             }
         });
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        mPresenter.save(this);
     }
 
     private void launchDetailView() {
